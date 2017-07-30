@@ -9,8 +9,8 @@ from .models import Post
 #def post_list2(request):
 	#return render(request, 'blog/post_list2.html', {})
 def post_list(request):
-	posts=Post.objects.all()
+	posts=Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 	p=print(timezone.now())
-	return render(request, 'blog/post_list.html',{'posts':posts},{'p':p})
+	return render(request, 'blog/post_list.html',{'posts':posts})
 	
 # Create your views here.

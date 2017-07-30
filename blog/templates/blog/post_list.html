@@ -9,10 +9,10 @@
 
 <p>Un parrafo que esta antes de los posts</p>
 {%for post in posts%}
-<div>>
-<p>published: {{post.published_date}}</p>
+<div>
 <h1><a href="">{{post.title}}</a></h1>
 <p>{{post.text |linebreaksbr}}</p>
+<p>published: {{post.published_date}}</p>
 </div>
 {%endfor%}
 <p>Despues del posts</p>
