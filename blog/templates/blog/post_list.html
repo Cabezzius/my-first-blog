@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Blog</title>
+	<title>Cabezzius Blog</title>
+
 </head>
-<body>
-<h1>Esta es una pagina HTML construida con Django</h1>
-<ul><li><a href="blog/post_list2.html">Primer elemento</a></li><li>Sengundo elemento de lista</li><li>Este es otro elemento de un lista</li></ul>
-<h2><br> Despues de este titulo pondremos mas elemtos de lista</br></h2>
-<ul><li>Seguimos con los elementos de las listas</li><li>Y asi sucesivamente</li></ul>
+
+<body><div><h1><a href="">Django Girls Blog</a></h1></div>
+
+<p>Un parrafo que esta antes de los posts</p>
+{%for post in posts%}
+<div>>
+<p>published: {{post.published_date}}</p>
+<h1><a href="">{{post.title}}</a></h1>
+<p>{{post.text |linebreaksbr}}</p>
+</div>
+{%endfor%}
+<p>Despues del posts</p>
+
+
 </body>
 </html>
